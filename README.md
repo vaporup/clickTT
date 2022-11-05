@@ -3,7 +3,7 @@
 You can filter data and also get the output in different formats:
 
 - TABULAR
-- ICS (iCalender)
+- ICS (iCalendar)
 - JSON
 - YAML
 
