@@ -102,3 +102,18 @@ but filter out the "TTC Muggensturm II" group
   clickTT -t -G "TTC Muggensturm II"
 
 ```
+
+### crontab Examples
+
+```
+*/15 * * * * /usr/bin/clickTT -i                                    > all.ics
+*/16 * * * * /usr/bin/clickTT -i -a                                 > all-with-alarms.ics
+*/17 * * * * /usr/bin/clickTT -i -L "J19 BK" -g "TTG Bischweier"    > herren-1.ics
+*/18 * * * * /usr/bin/clickTT -i -a -L "J19 BK" -g "TTG Bischweier" > herren-1-with-alarms.ics
+*/19 * * * * /usr/bin/clickTT -i -l "J19 BK"                        > j19.ics
+*/20 * * * * /usr/bin/clickTT -i -a -l "J19 BK"                     > j19-with-alarms.ics
+*/21 * * * * /usr/bin/clickTT -i -g "TTG Bischweier II"             > herren-2.ics
+*/22 * * * * /usr/bin/clickTT -i -a -g "TTG Bischweier II"          > herren-2-with-alarms.ics
+*/23 * * * * /usr/bin/clickTT -i -g "TTG Bischweier III"            > herren-3.ics
+*/24 * * * * /usr/bin/clickTT -i -a -g "TTG Bischweier III"         > herren-3-with-alarms.ics
+```
