@@ -273,7 +273,7 @@ func main() {
 
 			fmt.Println("")
 			fmt.Println("BEGIN:VEVENT")
-			fmt.Printf("UID:uid%d@2flub.org\n", idx)
+			fmt.Printf("UID:uid%d@clickTTermine\n", idx)
 			fmt.Println("SUMMARY:", event.Home, "-", event.Guest, "("+event.League+")")
 			//fmt.Println("DESCRIPTION:", event.Home, "-", event.Guest, event.Date+" "+event.Time, "("+event.League+")")
 
