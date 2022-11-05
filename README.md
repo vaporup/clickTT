@@ -27,7 +27,7 @@ CGO_ENABLED=0 go build
 ### Examples
 
 ```
-Usage: ./clickTT OPTIONS
+Usage: clickTT OPTIONS
 
 OPTIONS
 
