@@ -1,4 +1,12 @@
 
+```clickTT``` os a command line tool to fetch match dates from
+the official clickTT website. You can filter data and also get the output in different formats:
+
+- tabular
+- ICS (iCalender)
+- JSON
+- YAML
+
 ## Shell Example
 
 ```
