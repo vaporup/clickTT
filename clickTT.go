@@ -46,6 +46,8 @@ func main() {
 
 	if len(os.Args) == 1 {
 
+                fmt.Println("")
+
 		cl.PrintUsage(os.Stderr)
 
 		fmt.Fprintf(os.Stderr,
