@@ -7,7 +7,7 @@ You can filter data and also get the output in different formats:
 - JSON
 - YAML
 
-## Shell Example
+```clickTT``` is a more advanced version what you can already do with a little shell snippet:
 
 ```
 curl \
