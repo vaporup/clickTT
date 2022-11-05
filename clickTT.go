@@ -55,12 +55,11 @@ func main() {
 
 		fmt.Fprintf(os.Stderr,
 			"\n Show all matches of the next 6 months in TABULAR format\n")
-		fmt.Fprintf(os.Stderr,
-			"\n  %s -t\n", cl.ProgramName)
+		fmt.Fprintf(os.Stderr, "\n  %s -t\n", cl.ProgramName)
 
 		fmt.Fprintf(os.Stderr,
 			"\nShow all matches of the next 6 months in ICS format\n")
-		fmt.Fprintf(os.Stderr, "\n%s -i\n", cl.ProgramName)
+		fmt.Fprintf(os.Stderr, "\n  %s -i\n", cl.ProgramName)
 
 		fmt.Fprintf(os.Stderr,
 			"\nShow all matches of the next 6 months in ICS format with alarms\n")
@@ -72,11 +71,11 @@ func main() {
 
 		fmt.Fprintf(os.Stderr,
 			"\nShow all matches of the next 6 months in TABULAR format for club 1440\n")
-		fmt.Fprintf(os.Stderr, "\n  %s -t -c 1440 \n", cl.ProgramName)
+		fmt.Fprintf(os.Stderr, "\n  %s -t -c 1440\n", cl.ProgramName)
 
 		fmt.Fprintf(os.Stderr,
 			"\nShow all matches of the next 6 months in ICS format with alarms for club 1440\n")
-		fmt.Fprintf(os.Stderr, "\n  %s -i -a -c 1440 \n", cl.ProgramName)
+		fmt.Fprintf(os.Stderr, "\n  %s -i -a -c 1440\n", cl.ProgramName)
 
 		fmt.Fprintf(os.Stderr,
 			"\nShow all matches of the next 6 months in JSON format and pipe it to jq\n")
@@ -88,7 +87,7 @@ func main() {
 
 		fmt.Fprintf(os.Stderr,
 			"\nShow all matches of the next 6 months in YAML format\n")
-		fmt.Fprintf(os.Stderr, "\n  %s -y \n", cl.ProgramName)
+		fmt.Fprintf(os.Stderr, "\n  %s -y\n", cl.ProgramName)
 
 		fmt.Fprintf(os.Stderr,
 			"\nShow only matches of \"H KLA\" league of the next 6 months in YAML format\n")
