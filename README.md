@@ -57,23 +57,28 @@ Show all matches of the next 6 months in ICS format with alarms
 
   clickTT -i -a
 
-Show only matches of "H KLA" league of the next 6 months in ICS format with alarms
+Show only matches of "H KLA" league of the next 6 months  
+in ICS format with alarms
 
   clickTT -i -a -l "H KLA"
 
-Show all matches of the next 6 months in TABULAR format for club 1440
+Show all matches of the next 6 months  
+in TABULAR format for club 1440
 
   clickTT -t -c 1440
 
-Show all matches of the next 6 months in ICS format with alarms for club 1440
+Show all matches of the next 6 months  
+in ICS format with alarms for club 1440
 
   clickTT -i -a -c 1440
 
-Show all matches of the next 6 months in JSON format and pipe it to jq
+Show all matches of the next 6 months  
+in JSON format and pipe it to jq
 
   clickTT -j | jq .
 
-Show only matches of "H KLA" league of the next 6 months in JSON format and pipe it to jq
+Show only matches of "H KLA" league of the next 6 months  
+in JSON format and pipe it to jq
 
   clickTT -j -l "H KLA"| jq .
 
@@ -81,15 +86,18 @@ Show all matches of the next 6 months in YAML format
 
   clickTT -y
 
-Show only matches of "H KLA" league of the next 6 months in YAML format
+Show only matches of "H KLA" league of the next 6 months  
+in YAML format
 
   clickTT -y -l "H KLA"
 
-Show only matches of group "TTG Bischweier" of the next 6 months in TABULAR format but not in the "J19 BK" league
+Show only matches of group "TTG Bischweier" of the next 6 months  
+in TABULAR format but not in the "J19 BK" league
 
   clickTT -t -L "J19 BK" -g "TTG Bischweier"
 
-Show all matches of the next 6 months in TABULAR format but filter out the "TTC Muggensturm II" group
+Show all matches of the next 6 months in TABULAR format  
+but filter out the "TTC Muggensturm II" group
 
   clickTT -t -G "TTC Muggensturm II"
 
