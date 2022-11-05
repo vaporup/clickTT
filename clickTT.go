@@ -47,33 +47,59 @@ func main() {
 	if len(os.Args) == 1 {
 
 		cl.PrintUsage(os.Stderr)
-		fmt.Fprintf(os.Stderr, "\nEXAMPLES:\n")
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in TABULAR format\n")
-		fmt.Fprintf(os.Stderr, "\n  %s -t\n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in ICS format\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nEXAMPLES:\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\n Show all matches of the next 6 months in TABULAR format\n")
+		fmt.Fprintf(os.Stderr,
+			"\n  %s -t\n", cl.ProgramName)
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow all matches of the next 6 months in ICS format\n")
 		fmt.Fprintf(os.Stderr, "\n%s -i\n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in ICS format with alarms\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow all matches of the next 6 months in ICS format with alarms\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -i -a\n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow only matches of \"H KLA\" league of the next 6 months in ICS format with alarms\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow only matches of \"H KLA\" league of the next 6 months in ICS format with alarms\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -i -a -l \"H KLA\"\n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in TABULAR format for club 1440\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow all matches of the next 6 months in TABULAR format for club 1440\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -t -c 1440 \n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in ICS format with alarms for club 1440\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow all matches of the next 6 months in ICS format with alarms for club 1440\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -i -a -c 1440 \n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in JSON format and pipe it to jq\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow all matches of the next 6 months in JSON format and pipe it to jq\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -j | jq .\n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow only matches of \"H KLA\" league of the next 6 months in JSON format and pipe it to jq\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow only matches of \"H KLA\" league of the next 6 months in JSON format and pipe it to jq\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -j -l \"H KLA\"| jq .\n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in YAML format\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow all matches of the next 6 months in YAML format\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -y \n", cl.ProgramName)
-		fmt.Fprintf(os.Stderr, "\nShow only matches of \"H KLA\" league of the next 6 months in YAML format\n")
+
+		fmt.Fprintf(os.Stderr,
+			"\nShow only matches of \"H KLA\" league of the next 6 months in YAML format\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -y -l \"H KLA\"\n", cl.ProgramName)
 
-		fmt.Fprintf(os.Stderr, "\nShow only matches of group \"TTG Bischweier\" of the next 6 months in TABULAR format but not in the \"J19 BK\" league\n")
+		fmt.Fprintf(os.Stderr,
+			"\nShow only matches of group \"TTG Bischweier\" of the next 6 months in TABULAR format but not in the \"J19 BK\" league\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -t -L \"J19 BK\" -g \"TTG Bischweier\"\n", cl.ProgramName)
 
-		fmt.Fprintf(os.Stderr, "\nShow all matches of the next 6 months in TABULAR format but filter out the \"TTC Muggensturm II\" group\n")
+		fmt.Fprintf(os.Stderr,
+			"\nShow all matches of the next 6 months in TABULAR format but filter out the \"TTC Muggensturm II\" group\n")
 		fmt.Fprintf(os.Stderr, "\n  %s -t -G \"TTC Muggensturm II\"\n", cl.ProgramName)
+
 		os.Exit(1)
 	}
 
