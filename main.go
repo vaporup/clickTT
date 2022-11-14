@@ -29,6 +29,7 @@ func main() {
 
 	cl := cmdline.New()
 
+	cl.AddFlag("7", "last-seven-days", "Events of last 7 days")
 	cl.AddFlag("t", "table", "TABLE output")
 	cl.AddFlag("i", "ics", "ICS output")
 	cl.AddFlag("j", "json", "JSON output")
@@ -113,10 +114,13 @@ func main() {
 	params := url.Values{}
 
 	params.Add("searchType", "0")
-	params.Add("searchTimeRange", "5")
-	//params.Add("searchTimeRange", "-1") // last 7 days
 	params.Add("club", cl.OptionValue("c"))
 	//params.Add("club", "1416")
+	if cl.IsOptionSet("7") {
+		params.Add("searchTimeRange", "-1") // last 7 days
+	} else {
+		params.Add("searchTimeRange", "5") // next 6 months
+	}
 
 	resp, err := soup.PostForm("https://ttbw.click-tt.de/cgi-bin/WebObjects/nuLigaTTDE.woa/wa/clubMeetings", params)
 
