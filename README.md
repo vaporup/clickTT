@@ -31,6 +31,7 @@ Usage: clickTT OPTIONS
 
 OPTIONS
 
+-7, --last-seven-days         Events of last 7 days
 -G, --filter-group <string>   filter this group
 -L, --filter-league <string>  filter this league
 -a, --alarms                  add ALARMS (only in ICS output)
