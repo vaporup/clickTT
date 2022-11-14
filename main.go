@@ -46,7 +46,7 @@ func main() {
 
 	if len(os.Args) == 1 {
 
-                fmt.Println("")
+		fmt.Println("")
 
 		cl.PrintUsage(os.Stderr)
 
@@ -114,6 +114,7 @@ func main() {
 
 	params.Add("searchType", "0")
 	params.Add("searchTimeRange", "5")
+	//params.Add("searchTimeRange", "-1") // last 7 days
 	params.Add("club", cl.OptionValue("c"))
 	//params.Add("club", "1416")
 
@@ -132,6 +133,7 @@ func main() {
 	var lenType int
 	var lenHome int
 	var lenGuest int
+	var lenths int
 
 	for _, tr := range trs {
 
@@ -140,70 +142,145 @@ func main() {
 		e := Event{}
 
 		tds := tr.FindAll("td")
+		ths := tr.FindAll("th")
 
-		for td_num, td := range tds {
+		if len(ths) > 0 {
+			lenths = len(ths)
+		}
 
-			text := td.Text()
-			attrs := td.Attrs()
+		if lenths == 9 {
+			// normal table length
 
-			data := strings.TrimSpace(text)
-			data = strings.Split(data, "\n")[0]
+			for td_num, td := range tds {
 
-			if td_num == 0 {
-				if attrs["class"] == "tabelle-rowspan" {
-					e.Day = strings.Trim(day, ".")
-				} else {
-					day = data
-					e.Day = strings.Trim(day, ".")
+				text := td.Text()
+				attrs := td.Attrs()
+
+				data := strings.TrimSpace(text)
+				data = strings.Split(data, "\n")[0]
+
+				if td_num == 0 {
+					if attrs["class"] == "tabelle-rowspan" {
+						e.Day = strings.Trim(day, ".")
+					} else {
+						day = data
+						e.Day = strings.Trim(day, ".")
+					}
 				}
-			}
 
-			if td_num == 1 {
-				if attrs["class"] == "tabelle-rowspan" {
-					e.Date = date
-				} else {
-					date = data
-					e.Date = date
+				if td_num == 1 {
+					if attrs["class"] == "tabelle-rowspan" {
+						e.Date = date
+					} else {
+						date = data
+						e.Date = date
+					}
 				}
-			}
 
-			if td_num == 2 {
-				e.Time = data
-			}
-
-			if td_num == 3 {
-				continue
-			}
-
-			if td_num == 4 {
-				continue
-			}
-
-			if td_num == 5 {
-				if len(data) > lenType {
-					lenType = len(data)
+				if td_num == 2 {
+					e.Time = data
 				}
-				e.League = data
-			}
 
-			if td_num == 6 {
-				if len(data) > lenHome {
-					lenHome = len(data)
+				if td_num == 3 {
+					continue
 				}
-				e.Home = data
-			}
 
-			if td_num == 7 {
-				if len(data) > lenGuest {
-					lenGuest = len(data)
+				if td_num == 4 {
+					if len(data) > lenType {
+						lenType = len(data)
+					}
+					e.League = data
 				}
-				e.Guest = data
-			}
 
-			if td_num > 7 {
-				continue
-			}
+				if td_num == 5 {
+					if len(data) > lenHome {
+						lenHome = len(data)
+					}
+					e.Home = data
+				}
 
+				if td_num == 6 {
+					if len(data) > lenGuest {
+						lenGuest = len(data)
+					}
+					e.Guest = data
+				}
+
+				if td_num > 6 {
+					continue
+				}
+
+			}
+		}
+
+		if lenths == 10 {
+			// e.g. with "POKAL" events
+			// the table has one column more (some number)
+
+			for td_num, td := range tds {
+
+				text := td.Text()
+				attrs := td.Attrs()
+
+				data := strings.TrimSpace(text)
+				data = strings.Split(data, "\n")[0]
+
+				if td_num == 0 {
+					if attrs["class"] == "tabelle-rowspan" {
+						e.Day = strings.Trim(day, ".")
+					} else {
+						day = data
+						e.Day = strings.Trim(day, ".")
+					}
+				}
+
+				if td_num == 1 {
+					if attrs["class"] == "tabelle-rowspan" {
+						e.Date = date
+					} else {
+						date = data
+						e.Date = date
+					}
+				}
+
+				if td_num == 2 {
+					e.Time = data
+				}
+
+				if td_num == 3 {
+					continue
+				}
+
+				if td_num == 4 {
+					continue
+				}
+
+				if td_num == 5 {
+					if len(data) > lenType {
+						lenType = len(data)
+					}
+					e.League = data
+				}
+
+				if td_num == 6 {
+					if len(data) > lenHome {
+						lenHome = len(data)
+					}
+					e.Home = data
+				}
+
+				if td_num == 7 {
+					if len(data) > lenGuest {
+						lenGuest = len(data)
+					}
+					e.Guest = data
+				}
+
+				if td_num > 7 {
+					continue
+				}
+
+			}
 		}
 
 		// Skip empty events
